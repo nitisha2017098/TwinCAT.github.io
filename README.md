@@ -8,11 +8,12 @@
 
 5. In the "MOUSEINPUT" user type, add the following variables:
 
+<i>
 Xpos: Integer  <br>
 Ypos: Integer  <br>
 LeftButton: Boolean <br>
 RightButton: Boolean <br>
-MiddleButton: Boolean <br>
+MiddleButton: Boolean <br></i>
 
 5. Save the user type and close the window.
 
@@ -27,7 +28,7 @@ VAR MouseInput : MOUSEINPUT;
 8. Use the following code to initialize and retrieve the mouse input:
 
 Possible to use Windows API calls to retrieve mouse input, for example:
-
+<i>
 FUNCTION MouseInputTask() : VOID <br>
     VAR hWindow : HANDLE; <br>
     VAR pt : POINT; <br>
@@ -43,7 +44,7 @@ BEGIN <br>
         MouseInput.MiddleButton := (GetKeyState(VK_MBUTTON) AND $8000) <> 0;<br>
     END_IF<br>
 END_FUNCTION<br>
-
+</i>
 9. Start the program and the mouse input values will be updated in the "MouseInput" variable.
 
 10. Use the values in the "MouseInput" variable as needed in your TwinCAT program.
