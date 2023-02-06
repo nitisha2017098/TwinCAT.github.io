@@ -6,7 +6,7 @@
 
 4. In the "Create Global Variable" window, select the "User Type" tab and create a new user type with the name "MOUSEINPUT".
 
-5. In the "MOUSEINPUT" user type, add the following variables:
+5. In the "MOUSEINPUT" user type, add the following variables: <br>
 
 <i>
 Xpos: Integer  <br>
@@ -45,8 +45,9 @@ BEGIN <br>
     END_IF<br>
 END_FUNCTION<br>
 </i>
-9. Start the program and the mouse input values will be updated in the "MouseInput" variable.
+<br>
 
+9. Start the program and the mouse input values will be updated in the "MouseInput" variable.
 10. Use the values in the "MouseInput" variable as needed in your TwinCAT program.
 
 
