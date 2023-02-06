@@ -8,10 +8,10 @@
 
 5. In the "MOUSEINPUT" user type, add the following variables:
 
-Xpos: Integer
-Ypos: Integer
-LeftButton: Boolean
-RightButton: Boolean
+Xpos: Integer #br
+Ypos: Integer #br
+LeftButton: Boolean #br
+RightButton: Boolean #br
 MiddleButton: Boolean
 5. Save the user type and close the window.
 
