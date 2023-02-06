@@ -6,7 +6,8 @@
 
 4. In the "Create Global Variable" window, select the "User Type" tab and create a new user type with the name "MOUSEINPUT".
 
-5. In the "MOUSEINPUT" user type, add the following variables: <br>
+5. In the "MOUSEINPUT" user type, add the following variables:
+ <br>
 
 <i>
 Xpos: Integer  <br>
@@ -15,7 +16,7 @@ LeftButton: Boolean <br>
 RightButton: Boolean <br>
 MiddleButton: Boolean <br></i>
 
-5. Save the user type and close the window.
+6. Save the user type and close the window.
 
 6. In the "Programs" folder, right-click and select "Add New Item" again.
 
