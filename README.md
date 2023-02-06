@@ -48,6 +48,15 @@ Enumeration (or enum) is a user defined data type. It is mainly used to assign n
 ![image](https://user-images.githubusercontent.com/59726765/216983459-383912bc-74b6-40d1-94b3-3ec85d28aad7.png)
 
 
+<h1>Array</h1>
+Array is set if integers
+
+Arrays in TwinCAT:
+
+<h1>Two methods to declare arrays in TwinCAT</h1>
+![image](https://user-images.githubusercontent.com/59726765/216985033-2a01a6c8-8907-41d9-b27a-d4d464a2dd37.png)
+
+![image](https://user-images.githubusercontent.com/59726765/216984668-f0170cfe-a0e1-46b0-9e5e-a3a6e9a5c172.png)
 
 
 
