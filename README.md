@@ -1,3 +1,17 @@
+<h1> History of PLC </h1>
+. Before PLC’s Relay Logic was used for industrial automation which had several drawbacks, major one was that an damage to a single wire cause interruption to whole automation process.
+
+. To solve this, PLC (Programmable logic controllers) were introduced.
+
+. Very first PLC was invented in 1969, but it was very slow.
+
+. In 1979 PLC’s new generation was introduced which was very fast and reliable than the old one.
+
+![image](https://user-images.githubusercontent.com/59726765/216943575-0d35ad35-e7d5-43b4-8081-3bf56ab31316.png)
+
+
+
+
 1. Open TwinCAT and create a new project or open an existing one.
 
 2. In the TwinCAT System Manager, right-click on the "Programs" folder and select "Add New Item".
@@ -18,15 +32,15 @@ MiddleButton: Boolean <br></i>
 
 6. Save the user type and close the window.
 
-6. In the "Programs" folder, right-click and select "Add New Item" again.
+7. In the "Programs" folder, right-click and select "Add New Item" again.
 
-7. In the "Add New Item" window, select "Program" and click "Add".
+8. In the "Add New Item" window, select "Program" and click "Add".
 
-7. In the newly created program, declare a variable of the "MOUSEINPUT" type:
+9. In the newly created program, declare a variable of the "MOUSEINPUT" type:
 
 VAR MouseInput : MOUSEINPUT;
 
-8. Use the following code to initialize and retrieve the mouse input:
+10. Use the following code to initialize and retrieve the mouse input:
 
 Possible to use Windows API calls to retrieve mouse input, for example:
 <i>
@@ -48,8 +62,8 @@ END_FUNCTION<br>
 </i>
 <br>
 
-9. Start the program and the mouse input values will be updated in the "MouseInput" variable.
-10. Use the values in the "MouseInput" variable as needed in your TwinCAT program.
+11. Start the program and the mouse input values will be updated in the "MouseInput" variable.
+12. Use the values in the "MouseInput" variable as needed in your TwinCAT program.
 
 
 
