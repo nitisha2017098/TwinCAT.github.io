@@ -44,7 +44,7 @@ A data type, in programming, is a classification that specifies which type of va
 Enumeration (or enum) is a user defined data type. It is mainly used to assign names to integral constants, the names make a program easy to read and maintain.
 ![image](https://user-images.githubusercontent.com/59726765/216983303-1029c362-0724-4316-8b26-50e0cef91c23.png)
 
-Adding Enum in TwimCAT: 
+<h1>Adding Enum in TwimCAT: </h1>
 ![image](https://user-images.githubusercontent.com/59726765/216983459-383912bc-74b6-40d1-94b3-3ec85d28aad7.png)
 
 
