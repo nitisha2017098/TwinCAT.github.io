@@ -7,8 +7,17 @@
 
 . In 1979 PLC’s new generation was introduced which was very fast and reliable than the old one.
 
-![image](https://user-images.githubusercontent.com/59726765/216943575-0d35ad35-e7d5-43b4-8081-3bf56ab31316.png)
+<h1>About Twincat</h1>
 
+. TwinCAT stands for “ The Windows Control and Automation Texhnology.
+
+. It is a visual studio based software.
+
+. TwinCAT has two parts
+	-  XAE: eXtanded Automtion Engineering
+	- XAR: eXtanded Automation Runtime
+
+. And three states: Config, Run, Stop/exception 
 
 
 
