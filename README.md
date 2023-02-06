@@ -8,11 +8,11 @@
 
 5. In the "MOUSEINPUT" user type, add the following variables:
 
-Xpos: Integer #br
-Ypos: Integer #br
-LeftButton: Boolean #br
-RightButton: Boolean #br
-MiddleButton: Boolean
+Xpos: Integer  <br>
+Ypos: Integer  <br>
+LeftButton: Boolean <br>
+RightButton: Boolean <br>
+MiddleButton: Boolean <br>
 5. Save the user type and close the window.
 
 6. In the "Programs" folder, right-click and select "Add New Item" again.
