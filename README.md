@@ -19,6 +19,8 @@
 
 . And three states: Config, Run, Stop/exception 
 
+. TwinCAT allows us to use any machine (for example this PC) as a PLC.
+
 
 
 1. Open TwinCAT and create a new project or open an existing one.
