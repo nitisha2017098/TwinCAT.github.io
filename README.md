@@ -13,6 +13,7 @@ Ypos: Integer  <br>
 LeftButton: Boolean <br>
 RightButton: Boolean <br>
 MiddleButton: Boolean <br>
+
 5. Save the user type and close the window.
 
 6. In the "Programs" folder, right-click and select "Add New Item" again.
@@ -27,21 +28,21 @@ VAR MouseInput : MOUSEINPUT;
 
 Possible to use Windows API calls to retrieve mouse input, for example:
 
-FUNCTION MouseInputTask() : VOID
-    VAR hWindow : HANDLE;
-    VAR pt : POINT;
-BEGIN
-    hWindow := GetActiveWindow();
-    IF hWindow <> 0 THEN
-        GetCursorPos(pt);
-        ScreenToClient(hWindow, pt);
-        MouseInput.Xpos := pt.x;
-        MouseInput.Ypos := pt.y;
-        MouseInput.LeftButton := (GetKeyState(VK_LBUTTON) AND $8000) <> 0;
-        MouseInput.RightButton := (GetKeyState(VK_RBUTTON) AND $8000) <> 0;
-        MouseInput.MiddleButton := (GetKeyState(VK_MBUTTON) AND $8000) <> 0;
-    END_IF
-END_FUNCTION
+FUNCTION MouseInputTask() : VOID <br>
+    VAR hWindow : HANDLE; <br>
+    VAR pt : POINT; <br>
+BEGIN <br>
+    hWindow := GetActiveWindow(); <br>
+    IF hWindow <> 0 THEN<br>
+        GetCursorPos(pt);<br>
+        ScreenToClient(hWindow, pt);<br>
+        MouseInput.Xpos := pt.x; <br>
+        MouseInput.Ypos := pt.y;<br>
+        MouseInput.LeftButton := (GetKeyState(VK_LBUTTON) AND $8000) <> 0;<br>
+        MouseInput.RightButton := (GetKeyState(VK_RBUTTON) AND $8000) <> 0;<br>
+        MouseInput.MiddleButton := (GetKeyState(VK_MBUTTON) AND $8000) <> 0;<br>
+    END_IF<br>
+END_FUNCTION<br>
 
 9. Start the program and the mouse input values will be updated in the "MouseInput" variable.
 
