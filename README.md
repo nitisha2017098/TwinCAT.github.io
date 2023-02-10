@@ -197,16 +197,20 @@ END_VAR
 8. At "state = 0" the CASE function will run a code block. Power is enabled though first case, To power our axis, we use:
 
 ```
-ExAxPower.Enable := TRUE; 
-ExAxPower.Enable_Positive := TRUE;
-ExAxPower.Enable_Negative := TRUE;
+0:
+ExAxPower.Enable := TRUE; //General software enable for the axis.
+ExAxPower.Enable_Positive := TRUE; //Feed enable in positive direction.
+ExAxPower.Enable_Negative := TRUE; //Feed enable in negative direction.
 ```
 
 9. State is set to 1, in first caste for execution of futher code blocks in case function.
 10.  In next step, Check whether the power is enabled, if it is uptate state integer to 2, using 
 ```
+1:
 IF ExAxPower.Active THEN
 	state=2;
 ```
+
+11. Put a cond
 
 
