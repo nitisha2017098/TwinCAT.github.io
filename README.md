@@ -62,7 +62,7 @@ Arrays in TwinCAT:
 <h5>IF</h5>
 If is used to specify a block of code to be excecuted if a specified condition is true.
 
-```python
+```ST
 IF condition Then
 	// Block of code to be executed
 END_IF
