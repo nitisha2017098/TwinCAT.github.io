@@ -170,18 +170,18 @@ END_VAR
 ``` 
 5. MC_MoveVelocity function block enables us to control the velocity of rotation. Call a function ```ExAxMvVelo : MC_MoveVelocity; in variable declaration window.
 
-```
-PROGRAM MAIN
-VAR
-	ExampleAxisName : AXIS_REF;
-	ExAxPower 		: MC_Power;
-	ExAxStop 		: MC_Stop;
-	ExAxMvVelo 		: MC_MoveVelocity
-END_VAR
-``` 
+	```
+	PROGRAM MAIN
+	VAR
+		ExampleAxisName : AXIS_REF;
+		ExAxPower 		: MC_Power;
+		ExAxStop 		: MC_Stop;
+		ExAxMvVelo 		: MC_MoveVelocity
+	END_VAR
+	``` 
 
 6. CASE Function is used to axcecute the code blocks at different states i.e. for starting, running and stoping. CASE function compares the variable passed into it, and executes the section of code where it finds a match.
-7. Integer variable "State" is declared in variable declaration window for case function.
+8.. Integer variable "State" is declared in variable declaration window for case function which contains value "0".
 
 ```
 PROGRAM MAIN
@@ -194,11 +194,19 @@ VAR
 END_VAR
 ```
 
-8. To power our axis, we use:
+8. At "state = 0" the CASE function will run a code block. Power is enabled though first case, To power our axis, we use:
 
 ```
 ExAxPower.Enable := TRUE; 
 ExAxPower.Enable_Positive := TRUE;
 ExAxPower.Enable_Negative := TRUE;
 ```
+
+9. State is set to 1, in first caste for execution of futher code blocks in case function.
+10.  In next step, Check whether the power is enabled, if it is uptate state integer to 2, using 
+```
+IF ExAxPower.Active THEN
+	state=2;
+```
+
 
