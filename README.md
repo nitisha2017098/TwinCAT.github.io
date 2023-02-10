@@ -64,7 +64,7 @@ If is used to specify a block of code to be excecuted if a specified condition i
 
 ```python
 IF condition Then
-	//Block of code to be executed
+	// Block of code to be executed
 END_IF
 ```
    
