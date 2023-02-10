@@ -58,16 +58,101 @@ Arrays in TwinCAT:
 
 ![image](https://user-images.githubusercontent.com/59726765/216984668-f0170cfe-a0e1-46b0-9e5e-a3a6e9a5c172.png)
 
-<h1>Instructions</h1>
-<h5>IF</h5>
-If is used to specify a block of code to be excecuted if a specified condition is true.
+<h1>TwinCAT program to Start and Stop motor axis Using ST</h1>
 
-```ST
-IF condition Then
-	// Block of code to be executed
-END_IF
+MAIN (PRG):
+```python
+PROGRAM MAIN
+VAR
+	ExampleAxisName : AXIS_REF;
+	ExAxPower 		: MC_Power;
+	ExAxStop 		: MC_Stop;
+	ExAxMvVelo 		: MC_MoveVelocity;
+	
+	State			: INT := 0;
+	
+	start			: BOOL;
+	stop			: BOOL;
+	
+END_VAR
 ```
-   
-   
+MAIN WIMDOW:
+```python
+ExampleAxisName.ReadStatus();
 
+CASE State OF
+	0:	//power activation
+		ExAxPower.Enable := TRUE; 
+		ExAxPower.Enable_Positive := TRUE;
+		ExAxPower.Enable_Negative := TRUE;
+		State := 1;
+		
+	1:	//check power
+		IF ExAxPower.Active THEN
+			State := 2;
+		END_IF
+		
+	2:	//start motion
+		IF start THEN
+			
+			ExAxMvVelo.Velocity := 50; //arbitrary number
+			ExAxMvVelo.Execute := TRUE;
+			State := 3;
+		END_IF
+		
+	3:	//check that motion is within range
+		IF ExAxMvVelo.InVelocity THEN
+			State := 4;
+		END_IF
+		
+	4: //stop motion
+		IF stop THEN
+			ExAxStop.Execute := TRUE;
+			start:= False;
+			State := 5;
+		END_IF
 
+		
+	5: //check for stop to finish
+		IF ExAxStop.Done THEN
+			stop := FALSE;
+			State := 2;
+		END_IF
+		
+END_CASE
+
+ExAxPower(Axis := ExampleAxisName);
+ExAxStop(Axis := ExampleAxisName);
+ExAxMvVelo(Axis := ExampleAxisName);
+```
+
+Steps:
+
+1. The first step to use any of the motion control tools in a PLC program is to import the Tc2_MC2 library.To import the Tc2_MC2 library, go into the Solution Explorer and scroll down to the PLC section. Expand the PLC section and look for the References tab. Right click the References tab and select Add library..., then type "MC2" into the search box. Find the Tc2_MC2 library, select it and hit OK.
+
+![Screenshot (226)](https://user-images.githubusercontent.com/59726765/218043064-0386cabb-f731-4265-9573-2408546a3e4f.png)
+![Screenshot (227)](https://user-images.githubusercontent.com/59726765/218043273-2df587d9-8203-4378-9bd0-cb6de326d247.png)
+
+2. use ExAxName as the name of our function block. To declare our instance, we type ```ExAxName : AXIS_REF;``` into the Variable Declaration Window. AXIS_REF function block allows us to link our hardware to the PLC program. It also gives us access to the ReadStatus() function. Calling ReadStatus() will update the local I/O variables that are linked to our axis.
+
+Variable Declaration Window:
+```
+PROGRAM MAIN
+VAR
+	ExAxName : AXIS_REF;
+END_VAR
+```
+Code Window:
+```
+ExAxName.ReadStatus();
+```
+
+3. MC_Power function block allows us to control the software enable for our axis. If we don't enable MC_Power, any command we send to our axis will result in an error. Let's add an instance of MC_Power to our POU. We'll call our new function block ExAxPower. To declare our instance of MC_Power, we need to type ExAxPower : MC_Power into the Variable Declaration Window.
+
+```
+PROGRAM MAIN
+VAR
+	ExampleAxisName : AXIS_REF;
+	ExAxPower 		: MC_Power;
+END_VAR
+```
