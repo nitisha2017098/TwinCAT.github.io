@@ -211,6 +211,26 @@ IF ExAxPower.Active THEN
 	state=2;
 ```
 
-11. Put a cond
+11. Start the motor using code:
+```
+ExAxMvVelo.Velocity := 50; //arbitrary number
+			ExAxMvVelo.Execute := TRUE;
+			State := 3;
+```
+if start condition is true the code above excecutes and state is set to 3.
 
-
+12. next we check whether the velocity of axis within range if yes we set the state to 4.
+```
+IF ExAxMvVelo.InVelocity THEN
+			State := 4;
+		END_IF
+```
+13. Then we can stop the axis ysing the code:
+```
+IF stop THEN
+			ExAxStop.Execute := TRUE;
+			start:= False;
+			State := 5;
+		END_IF
+```
+the above code executes when stop condition is true.
